@@ -3,11 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Excersise_ItemsControl.Views"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:local="clr-namespace:Excersise_ItemsControl.Views" xmlns:i1="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <ListBox ItemsSource="{Binding RecipesWithCommand}">
+            <i1:Interaction.Triggers>
+                <i1:EventTrigger EventName="SelectionChanged">
+                    <i1:InvokeCommandAction Command="{Binding MaterialViewCommand}" CommandParameter="{Binding ListParameter}"/>
+                </i1:EventTrigger>
+            </i1:Interaction.Triggers>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid HorizontalAlignment="Stretch">
@@ -15,12 +21,35 @@
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-
+                        
                         <TextBlock HorizontalAlignment="Center" Grid.Column="0" Text="{Binding Path=ID}"></TextBlock>
                         <TextBlock HorizontalAlignment="Center" Grid.Column="1" Text="{Binding Path=Name}"></TextBlock>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <ItemsControl ItemsSource="{Binding RecipesWithCommand}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Rows="{Binding RecipesWithCommand.Content}"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    
+                    <Button
+                        
+                        Content="{Binding Content}"
+                        Command="{Binding LetterKeyCommand}"
+                        CommandParameter="{Binding CommandParameter}"
+                        Style="{StaticResource KeyButton}"
+                        Opacity="{Binding Opacity}"
+                        Foreground="{Binding Foreground}"
+                        FontWeight="{Binding FontWeight}"
+                        IsEnabled="{Binding IsEnabled}"
+                    />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
     </Grid>
 </UserControl>

@@ -12,23 +12,34 @@ namespace Excersise_ItemsControl.ViewModels
 {
     class ListPageViewModel : BaseViewModel
     {
-        public ObservableCollection<Recipe> Recipes { get; set; }
+        public ObservableCollection<IRecipe> Recipes { get; set; }
+        public ObservableCollection<IMaterial> RecipesMaterials { get; set; }
 
-       // public RecipeListUC RecipeListUC { get; set; }
         public RecipeListUCViewModel RecipeListUCViewModel { get; set; }
         
 
         public ListPageViewModel()
         {
-            Recipes = new ObservableCollection<Recipe>();
+            Recipes = new ObservableCollection<IRecipe>();
             MakeRecipes();
-            //RecipeListUC = new RecipeListUC();
-            RecipeListUCViewModel = new RecipeListUCViewModel(new RelayParameterizedCommand(p => ListClick((Recipe)p)), Recipes);
+            RecipeListUCViewModel = new RecipeListUCViewModel(new RelayParameterizedCommand(p => ListClick((IRecipe)p)), Recipes);
+            //RecipeListUCViewModel = new RecipeListUCViewModel(Recipes);
+            RecipesMaterials = new ObservableCollection<IMaterial>();
         }
-        private void ListClick(Recipe recipe)
+        private void ListClick(IRecipe recipe)
         {
-
+            RecipesMaterials = recipe.Materials;
+            CreateMaterialsList();
         }
+
+        private void CreateMaterialsList()
+        {
+            foreach (var m in RecipesMaterials) 
+            {
+                
+            };
+        }
+
         private void MakeRecipes()
         {
             ObservableCollection<IMaterial> materialsPasta = new ObservableCollection<IMaterial>

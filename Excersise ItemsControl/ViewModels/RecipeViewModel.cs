@@ -9,13 +9,19 @@ namespace Excersise_ItemsControl.ViewModels
 {
     class RecipeViewModel : BaseViewModel
     {
-        public Recipe Recipe { get; set; }
+        public IRecipe Recipe { get; set; }
         public ICommand MaterialViewCommand { get; set; }
-
+        public object ListParameter => Recipe;
         public int ID { get; set; }
         public string Name { get; set; }
 
-        public RecipeViewModel (Recipe recipe, ICommand listCommand)
+        /*public RecipeViewModel(IRecipe recipe)
+        {
+            Recipe = recipe;
+            ID = Recipe.ID;
+            Name = Recipe.Name;
+        }*/
+        public RecipeViewModel (IRecipe recipe, ICommand listCommand)
         {
             Recipe = recipe;
             MaterialViewCommand = listCommand;

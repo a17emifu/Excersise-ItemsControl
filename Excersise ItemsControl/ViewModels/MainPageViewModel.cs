@@ -10,6 +10,7 @@ namespace Excersise_ItemsControl.ViewModels
     class MainPageViewModel : BaseViewModel
     {
         public string Letter { get; set; }
+        public string Letters { get; set; }
         public LetterKeyboardViewModel KeyBoardViewModel { get; set; }
         public ObservableCollection<char> WordDisplay { get; set; }
         public int CurrentWordLength { get => Letter?.Length ?? 0; }
@@ -26,9 +27,11 @@ namespace Excersise_ItemsControl.ViewModels
             ShowLetters(letter);
         }
 
-        private void ShowLetters(char letter)
+        private string ShowLetters(char letter)
         {
             WordDisplay.Add(letter);
+            Letters += letter;
+            return Letters;
         }
 
         private void ShowLetter(char letter)

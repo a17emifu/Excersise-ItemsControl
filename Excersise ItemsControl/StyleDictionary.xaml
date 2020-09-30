@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Excersise_ItemsControl">
+    <Style x:Key="KeyButton" TargetType="Button">
+        <Setter Property="Width" Value="40"></Setter>
+        <Setter Property="BorderBrush" Value="#FFEFC7F1" />
+        <Setter Property="Background" Value="black"/>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        <Setter Property="Foreground" Value="white" />
+        <Setter Property="FontFamily" Value="Bahnschrift Light" />
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#4e8895"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

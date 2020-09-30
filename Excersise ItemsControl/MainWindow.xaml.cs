@@ -23,6 +23,7 @@ namespace Excersise_ItemsControl
         public MainWindow()
         {
             InitializeComponent();
+            Main.Content = new MainPage();
         }
     }
 }

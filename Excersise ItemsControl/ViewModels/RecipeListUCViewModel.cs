@@ -12,9 +12,9 @@ namespace Excersise_ItemsControl.ViewModels
     {
         private readonly ICommand _listCommand;
         public ObservableCollection<RecipeViewModel> RecipesWithCommand { get; set; }
-       /* public IRecipe Recipe { get; set; }
-        public ICommand MaterialViewCommand { get; set; }
-        public object ListParameter;*/
+        /*public IRecipe Recipe { get; set; }
+        public ICommand MaterialViewCommand { get; set; }*/
+       // public object ListParameter => Recipe;
 
         // public ObservableCollection<IMaterial> RecipesMaterials { get; set; }
 
@@ -29,7 +29,7 @@ namespace Excersise_ItemsControl.ViewModels
          }*/
         public RecipeListUCViewModel(ICommand listcommand, ObservableCollection<IRecipe> recipes)
         {
-           /* Recipe = new Recipe();
+            /*Recipe = new Recipe();
             MaterialViewCommand = listcommand;*/
             _listCommand = listcommand;
             RecipesWithCommand = new ObservableCollection<RecipeViewModel>();

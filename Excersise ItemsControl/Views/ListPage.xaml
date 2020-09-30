@@ -17,10 +17,10 @@
         <local:RecipeListUC Grid.Column="0" DataContext="{Binding RecipeListUCViewModel}"></local:RecipeListUC>
         
         <StackPanel  Grid.Column="1" Width="200">
-            <ItemsControl ItemsSource="{Binding Materials}">
+            <ItemsControl ItemsSource="{Binding RecipesMaterials}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <UniformGrid Rows="{Binding Materials.length}"/>
+                        <UniformGrid Rows="{Binding RecipesMaterials.length}"/>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>

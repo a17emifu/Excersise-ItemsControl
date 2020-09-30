@@ -29,7 +29,7 @@ namespace Excersise_ItemsControl.ViewModels
         private void ListClick(IRecipe recipe)
         {
             RecipesMaterials = recipe.Materials;
-            CreateMaterialsList();
+            //CreateMaterialsList();
         }
 
         private void CreateMaterialsList()

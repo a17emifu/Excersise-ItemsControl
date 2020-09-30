@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Input;
+using static Excersise_ItemsControl.ViewModels.Base.RelayParametrizedCommand;
 
 namespace Excersise_ItemsControl.ViewModels
 {
@@ -12,15 +14,21 @@ namespace Excersise_ItemsControl.ViewModels
     {
         public ObservableCollection<Recipe> Recipes { get; set; }
 
-        public RecipeListUC RecipeListUC { get; set; }
+       // public RecipeListUC RecipeListUC { get; set; }
+        public RecipeListUCViewModel RecipeListUCViewModel { get; set; }
+        
 
         public ListPageViewModel()
         {
             Recipes = new ObservableCollection<Recipe>();
             MakeRecipes();
-            RecipeListUC = new RecipeListUC();
+            //RecipeListUC = new RecipeListUC();
+            RecipeListUCViewModel = new RecipeListUCViewModel(new RelayParameterizedCommand(p => ListClick((Recipe)p)), Recipes);
         }
+        private void ListClick(Recipe recipe)
+        {
 
+        }
         private void MakeRecipes()
         {
             ObservableCollection<IMaterial> materialsPasta = new ObservableCollection<IMaterial>

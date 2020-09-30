@@ -10,11 +10,25 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
             <RowDefinition Height="7*"></RowDefinition>
         </Grid.RowDefinitions>
         <Label Content="KEYBOARD" Grid.Row="0"></Label>
-        <TextBlock Grid.Row="0" Text="{Binding Letter}" HorizontalAlignment="Center" FontSize="36"></TextBlock>
+        <TextBlock Grid.Row="0" Text="{Binding Letter}" HorizontalAlignment="Right" FontSize="36"></TextBlock>
+        <StackPanel Width="200">
+        <ItemsControl Grid.Row="0" ItemsSource="{Binding WordDisplay}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Rows="{Binding CurrentWordLength}"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" Style="{StaticResource StandardFontTextBlock}"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        </StackPanel>
         <local:LetterKeyboardUC Grid.Row="1" DataContext="{Binding KeyBoardViewModel}"></local:LetterKeyboardUC>
     </Grid>
 </Page>

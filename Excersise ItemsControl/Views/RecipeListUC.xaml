@@ -28,28 +28,6 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <ItemsControl ItemsSource="{Binding RecipesWithCommand}">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <UniformGrid Rows="{Binding RecipesWithCommand.Content}"/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    
-                    <Button
-                        
-                        Content="{Binding Content}"
-                        Command="{Binding LetterKeyCommand}"
-                        CommandParameter="{Binding CommandParameter}"
-                        Style="{StaticResource KeyButton}"
-                        Opacity="{Binding Opacity}"
-                        Foreground="{Binding Foreground}"
-                        FontWeight="{Binding FontWeight}"
-                        IsEnabled="{Binding IsEnabled}"
-                    />
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+ 
     </Grid>
 </UserControl>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Excersise_ItemsControl.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,8 @@ namespace Excersise_ItemsControl
         public MainWindow()
         {
             InitializeComponent();
-            Main.Content = new MainPage();
+            //Main.Content = new MainPage();
+            Main.Content = new ListPage();
         }
     }
 }

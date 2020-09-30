@@ -14,7 +14,7 @@
             <RowDefinition Height="7*"></RowDefinition>
         </Grid.RowDefinitions>
         <Label Content="KEYBOARD" Grid.Row="0"></Label>
-        <TextBlock Grid.Row="0" Text="{Binding Letter}"></TextBlock>
+        <TextBlock Grid.Row="0" Text="{Binding Letter}" HorizontalAlignment="Center" FontSize="36"></TextBlock>
         <local:LetterKeyboardUC Grid.Row="1" DataContext="{Binding KeyBoardViewModel}"></local:LetterKeyboardUC>
     </Grid>
 </Page>

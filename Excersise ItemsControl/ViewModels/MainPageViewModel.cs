@@ -6,7 +6,7 @@ using static Excersise_ItemsControl.ViewModels.Base.RelayParametrizedCommand;
 
 namespace Excersise_ItemsControl.ViewModels
 {
-    class MainPageViewModel
+    class MainPageViewModel : BaseViewModel
     {
         public string Letter { get; set; }
         public LetterKeyboardViewModel KeyBoardViewModel { get; set; }

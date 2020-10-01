@@ -10,8 +10,12 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
-
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+
+        </Grid.RowDefinitions>
     <ListBox Grid.Column="0" FontSize="14" BorderThickness="0" ItemsSource="{Binding Recipes}" SelectedItem="{Binding Path= Recipe}">
             <i1:Interaction.Triggers>
                 <i1:EventTrigger EventName="SelectionChanged">
@@ -29,6 +33,16 @@
         </ListBox.ItemTemplate>
     </ListBox>
         <TextBlock Grid.Column="1" Text="{Binding Name}"></TextBlock>
+        <ListBox Grid.Column="1" Grid.Row="1" BorderThickness="0" ItemsSource="{Binding Recipe.Materials}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <ListBoxItem>
 
+                        <TextBlock HorizontalAlignment="Center" Text="{Binding Name}" />
+
+                    </ListBoxItem>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </UserControl>

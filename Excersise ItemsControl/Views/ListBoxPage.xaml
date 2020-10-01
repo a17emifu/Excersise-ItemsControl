@@ -10,7 +10,23 @@
       Title="ListBoxPage">
 
     <Grid>
-        <uc:ListboxUC DataContext="{Binding ListboxUCViewModel}"></uc:ListboxUC>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <uc:ListboxUC Grid.Column="0" DataContext="{Binding ListboxUCViewModel}"></uc:ListboxUC>
+        <StackPanel Orientation="Vertical" Grid.Column="1">
+        <TextBlock Text="{Binding Recipe.Name}"></TextBlock>
+        <ListBox  Grid.Row="1" BorderThickness="0" ItemsSource="{Binding Recipe.Materials}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <ListBoxItem>
+                        <TextBlock HorizontalAlignment="Center" Text="{Binding Name}" />
+                    </ListBoxItem>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        </StackPanel>
     </Grid>
 </Page>

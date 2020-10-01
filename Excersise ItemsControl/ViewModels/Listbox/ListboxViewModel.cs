@@ -12,11 +12,21 @@ namespace Excersise_ItemsControl.ViewModels.Listbox
         public ListboxUCViewModel ListboxUCViewModel { get; set; }
         public ObservableCollection<IRecipe> Recipes { get; set; }
 
+        private IRecipe _recipe { get => ListboxUCViewModel?.Recipe; }
+        public IRecipe Recipe { get; set; }
+
         public ListboxViewModel()
         {
             Recipes = new ObservableCollection<IRecipe>();
             MakeRecipes();
-            ListboxUCViewModel = new ListboxUCViewModel(Recipes);
+            //ListboxUCViewModel = new ListboxUCViewModel(Recipes);
+            ListboxUCViewModel = new ListboxUCViewModel(Recipes, new RelayCommand(ShowList));
+            //Recipe = _recipe;
+        }
+
+        private void ShowList()
+        {
+            Recipe = _recipe;
         }
 
         private void MakeRecipes()

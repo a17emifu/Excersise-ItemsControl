@@ -37,9 +37,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <ListBoxItem>
-
                         <TextBlock HorizontalAlignment="Center" Text="{Binding Name}" />
-
                     </ListBoxItem>
                 </DataTemplate>
             </ListBox.ItemTemplate>

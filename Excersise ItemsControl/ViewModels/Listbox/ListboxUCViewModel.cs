@@ -12,9 +12,13 @@ namespace Excersise_ItemsControl.ViewModels.Listbox
     {
         public ObservableCollection<IRecipe> Recipes { get; set; }
         public IRecipe Recipe { get; set; }
+
+        private string _name { get => Recipe?.Name; }
         public string Name { get; set; }
         public ICommand ShowCommand { get; set; }
+
         //public ObservableCollection<ListItemViewModel> RecipesWithVM { get; set; }
+
         public ListboxUCViewModel(ObservableCollection<IRecipe> recipes)
         {
             Recipe = new Recipe();
@@ -26,10 +30,15 @@ namespace Excersise_ItemsControl.ViewModels.Listbox
                 RecipesWithVM.Add(new ListItemViewModel(r));
             }*/
         }
-
+        public ListboxUCViewModel(ObservableCollection<IRecipe> recipes, ICommand listCommand)
+        {
+            Recipe = new Recipe();
+            Recipes = recipes;
+            ShowCommand = listCommand;
+        }
         private void ShowRecipeName()
         {
-            Name = Recipe.Name;
+            Name = _name;
         }
     }
 }

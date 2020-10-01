@@ -1,9 +1,7 @@
-﻿using Excersise_ItemsControl.Views;
+﻿using Excersise_ItemsControl.ViewModels.Listbox;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -14,20 +12,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Excersise_ItemsControl
+namespace Excersise_ItemsControl.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// ListBoxPage.xaml の相互作用ロジック
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ListBoxPage : Page
     {
-        public MainWindow()
+        public ListBoxPage()
         {
             InitializeComponent();
-            //Main.Content = new MainPage();
-            //Main.Content = new ListPage();
-            Main.Content = new ListBoxPage();
-
+            DataContext = new ListboxViewModel();
         }
     }
 }

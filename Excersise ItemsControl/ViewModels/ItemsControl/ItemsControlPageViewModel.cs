@@ -10,7 +10,7 @@ using static Excersise_ItemsControl.ViewModels.Base.RelayParametrizedCommand;
 
 namespace Excersise_ItemsControl.ViewModels
 {
-    class ListPageViewModel : BaseViewModel
+    class ItemsControlPageViewModel : BaseViewModel
     {
         public ObservableCollection<IRecipe> Recipes { get; set; }
         public ObservableCollection<IMaterial> RecipesMaterials{ get; set; }
@@ -19,7 +19,7 @@ namespace Excersise_ItemsControl.ViewModels
         public RecipeListUCViewModel RecipeListUCViewModel { get; set; }
         
 
-        public ListPageViewModel()
+        public ItemsControlPageViewModel()
         {
             Recipes = new ObservableCollection<IRecipe>();
             MakeRecipes();

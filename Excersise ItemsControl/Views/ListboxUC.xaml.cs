@@ -1,4 +1,4 @@
-﻿using Excersise_ItemsControl.ViewModels;
+﻿using Excersise_ItemsControl.ViewModels.Listbox;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,14 +15,14 @@ using System.Windows.Shapes;
 namespace Excersise_ItemsControl.Views
 {
     /// <summary>
-    /// ListPage.xaml の相互作用ロジック
+    /// ListboxUC.xaml の相互作用ロジック
     /// </summary>
-    public partial class ListPage : Page
+    public partial class ListboxUC : UserControl
     {
-        public ListPage()
+        public ListboxUC()
         {
             InitializeComponent();
-            DataContext = new ListPageViewModel();
+            
         }
     }
 }

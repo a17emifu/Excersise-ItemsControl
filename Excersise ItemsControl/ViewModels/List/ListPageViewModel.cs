@@ -22,8 +22,8 @@ namespace Excersise_ItemsControl.ViewModels
         {
             Recipes = new ObservableCollection<IRecipe>();
             MakeRecipes();
-            RecipeListUCViewModel = new RecipeListUCViewModel(new RelayParameterizedCommand(p => ListClick((IRecipe)p)), Recipes);
-            //RecipeListUCViewModel = new RecipeListUCViewModel(Recipes);
+           // RecipeListUCViewModel = new RecipeListUCViewModel(new RelayParameterizedCommand(p => ListClick((IRecipe)p)), Recipes);
+            RecipeListUCViewModel = new RecipeListUCViewModel(Recipes);
             RecipesMaterials = new ObservableCollection<IMaterial>();
         }
         private void ListClick(IRecipe recipe)

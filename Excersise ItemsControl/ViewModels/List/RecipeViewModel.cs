@@ -12,15 +12,15 @@ namespace Excersise_ItemsControl.ViewModels
         public IRecipe Recipe { get; set; }
         public ICommand MaterialViewCommand { get; set; }
         public object CommandParameter => Recipe;
-        public int ID { get; set; }
+        //public int ID { get; set; }
         public string Name { get; set; }
 
-        /*public RecipeViewModel(IRecipe recipe)
+        public RecipeViewModel(IRecipe recipe)
         {
             Recipe = recipe;
-            ID = Recipe.ID;
+            //ID = Recipe.ID;
             Name = Recipe.Name;
-        }*/
+        }
         public RecipeViewModel (IRecipe recipe, ICommand listCommand)
         {
             Recipe = recipe;

@@ -12,11 +12,15 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
-
         </Grid.ColumnDefinitions>
-        <local:RecipeListUC Grid.Column="0" DataContext="{Binding RecipeListUCViewModel}"></local:RecipeListUC>
-        
-        <StackPanel  Grid.Column="1" Width="200">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <local:RecipeListUC Grid.Column="0" Grid.Row="0" DataContext="{Binding RecipeListUCViewModel}"></local:RecipeListUC>
+
+        <StackPanel  Grid.Row="0" Grid.Column="1" Width="200">
             <ItemsControl ItemsSource="{Binding RecipesMaterials}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -29,6 +33,10 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
+            
+            
         </StackPanel>
+
+        <Button Grid.Column="0" Grid.Row="1" Command="{Binding ViewMaterialsCommand}" Content="材料見せて！"></Button>
     </Grid>
 </Page>

@@ -11,8 +11,12 @@
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
-
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
         <ItemsControl Grid.Row="0" ItemsSource="{Binding RecipesWithCommand}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -32,7 +36,12 @@
             </ItemsControl.ItemTemplate>
         </ItemsControl>
 
-        <ListBox Grid.Row="1" FontSize="14" HorizontalContentAlignment="Stretch" ItemsSource="{Binding RecipesWithVM}">
+        <ListBox Grid.Row="1" FontSize="14" HorizontalContentAlignment="Stretch" ItemsSource="{Binding RecipesWithVM}" SelectedItem="{Binding SelectedRecipe}">
+            <i1:Interaction.Triggers>
+                <i1:EventTrigger EventName="SelectionChanged">
+                    <i1:InvokeCommandAction Command="{Binding Path= ShowCommand}" />
+                </i1:EventTrigger>
+            </i1:Interaction.Triggers>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border>
@@ -45,5 +54,19 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <ItemsControl Grid.Column="1" Grid.Row="1" ItemsSource="{Binding SelectedRecipe.Recipe.Materials}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Rows="{Binding RecipesMaterials.length}"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" Style="{StaticResource StandardFontTextBlock}"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        
+        
     </Grid>
 </UserControl>

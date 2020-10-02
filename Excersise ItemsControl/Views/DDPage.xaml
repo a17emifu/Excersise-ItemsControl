@@ -13,10 +13,12 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+
 
         </Grid.ColumnDefinitions>
         <uc:DDListboxUC Grid.Column="0" DataContext="{Binding DDListboxUCVM}"></uc:DDListboxUC>
         <uc:DDListboxUC Grid.Column="1" DataContext="{Binding DDListboxUCVM2}"></uc:DDListboxUC>
-
+        <Button Grid.Column="2" Width="200" Height="100" Content="Recipe1" Command="{Binding ViewRecipeCommand}"></Button>
     </Grid>
 </Page>

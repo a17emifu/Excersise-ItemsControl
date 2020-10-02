@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Input;
 
 namespace Excersise_ItemsControl.ViewModels.DragDrop
 {
@@ -15,6 +16,7 @@ namespace Excersise_ItemsControl.ViewModels.DragDrop
         public DDListboxUCVM DDListboxUCVM { get; set; }
         public DDListboxUCVM DDListboxUCVM2 { get; set; }
 
+        public ICommand ViewRecipeCommand { get; set; }
 
         public DDPageVM()
         {
@@ -27,7 +29,14 @@ namespace Excersise_ItemsControl.ViewModels.DragDrop
             DDListboxUCVM = new DDListboxUCVM(Recipes);
             DDListboxUCVM2 = new DDListboxUCVM(Recipes2);
 
+            ViewRecipeCommand = new RelayCommand(ViewRecipe);
 
+
+        }
+
+        private void ViewRecipe()
+        {
+            ObservableCollection<IRecipe> recipes = Recipes;
         }
 
         private void MakeRecipes2()

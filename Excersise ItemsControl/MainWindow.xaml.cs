@@ -26,7 +26,9 @@ namespace Excersise_ItemsControl
             InitializeComponent();
             //Main.Content = new MainPage();
             //Main.Content = new ListPage();
-            Main.Content = new ListBoxPage();
+            //Main.Content = new ListBoxPage();
+            Main.Content = new DDPage();
+
 
         }
     }

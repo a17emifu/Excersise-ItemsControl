@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Excersise_ItemsControl.ViewModels.Listbox
 {
-    class ListboxViewModel : BaseViewModel
+    class ListboxPageViewModel : BaseViewModel
     {
         public ListboxUCViewModel ListboxUCViewModel { get; set; }
         public ObservableCollection<IRecipe> Recipes { get; set; }
@@ -15,7 +15,7 @@ namespace Excersise_ItemsControl.ViewModels.Listbox
         private IRecipe _recipe { get => ListboxUCViewModel?.Recipe; }
         public IRecipe Recipe { get; set; }
 
-        public ListboxViewModel()
+        public ListboxPageViewModel()
         {
             Recipes = new ObservableCollection<IRecipe>();
             MakeRecipes();

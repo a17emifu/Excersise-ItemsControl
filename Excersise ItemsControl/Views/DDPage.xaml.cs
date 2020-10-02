@@ -1,4 +1,4 @@
-﻿using Excersise_ItemsControl.ViewModels.Listbox;
+﻿using Excersise_ItemsControl.ViewModels.DragDrop;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,14 +15,14 @@ using System.Windows.Shapes;
 namespace Excersise_ItemsControl.Views
 {
     /// <summary>
-    /// ListBoxPage.xaml の相互作用ロジック
+    /// DDPage.xaml の相互作用ロジック
     /// </summary>
-    public partial class ListBoxPage : Page
+    public partial class DDPage : Page
     {
-        public ListBoxPage()
+        public DDPage()
         {
             InitializeComponent();
-            DataContext = new ListboxPageViewModel();
+            DataContext = new DDPageVM();
         }
     }
 }

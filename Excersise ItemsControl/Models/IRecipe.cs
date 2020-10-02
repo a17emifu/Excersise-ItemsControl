@@ -10,5 +10,8 @@ namespace Excersise_ItemsControl.Models
         int ID { get; set; }
         string Name { get; set; }
         ObservableCollection<IMaterial> Materials { get; set; }
+
+        public bool CanAcceptChildren { get; set; }
+        public ObservableCollection<IRecipe> Children { get; set; }
     }
 }

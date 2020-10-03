@@ -1,4 +1,5 @@
-﻿using Excersise_ItemsControl.GameLogics;
+﻿using Excersise_ItemsControl.DataTypes;
+using Excersise_ItemsControl.GameLogics;
 using Excersise_ItemsControl.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,7 @@ namespace Excersise_ItemsControl.ViewModels.MasterMind
             MakePegsOnBoard();
             PegUCVM = new PegUCVM(Pegs, PegsOnBoard);
 
-            MasterMindEngine = new MasterMindEngine(PegsOnBoard);
+            MasterMindEngine = new MasterMindEngine(PegsOnBoard, PegsResult);
            /* MasterMindEngine.TryPegs = PegsOnBoard;
             PegsResult = MasterMindEngine.PegsResult;*/
 
@@ -43,9 +44,18 @@ namespace Excersise_ItemsControl.ViewModels.MasterMind
 
         private void CheckPegsOnBoard()
         {
+            ObservableCollection<PegVM> answerPegs = new ObservableCollection<PegVM>();
+            answerPegs = MasterMindEngine.MakeAnswer();
+            PegsResult = MasterMindEngine.CompareAnswer();
 
-            MasterMindEngine.CompareAnswer();
-            PegsResult = MasterMindEngine.PegsResult;
+            /*PegsResult = answerPegs;
+            PegsResult[0].GuessResult = PegPosition.TotalyWrong;   //RED
+            PegsResult[1].GuessResult = PegPosition.CorrectColorWrongPosition; //YELLOW
+            PegsResult[2].GuessResult = PegPosition.CorrectColorAndPosiiton;   //GREEN*/
+
+            /*MasterMindEngine.CompareAnswer();
+            PegsResult = MasterMindEngine.PegsResult;*/
+            //MakePegsOnBoard();
         }
 
         private void CheckPegs()

@@ -6,6 +6,7 @@ namespace Excersise_ItemsControl.DataTypes
 {
         public enum PegPosition
         {
+            Default,
             CorrectColorWrongPosition,
             CorrectColorAndPosiiton,
             TotalyWrong

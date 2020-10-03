@@ -10,7 +10,7 @@ namespace Excersise_ItemsControl.GameLogics
     {
         public ObservableCollection<PegVM> PegsResult { get; set; }
         public ObservableCollection<PegVM> TryPegs { get; set; }
-        public void MakeAnswer();
-        public void CompareAnswer();
+        public ObservableCollection<PegVM> MakeAnswer();
+        public ObservableCollection<PegVM> CompareAnswer();
     }
 }

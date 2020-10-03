@@ -56,9 +56,9 @@ namespace Excersise_ItemsControl.ViewModels.DragDrop
                 new Material{ID = 2, Name = "お米"},
                 new Material{ID = 4, Name = "海苔"}
             };
-            Recipe recipe = new Recipe { ID = 1, Name = "ラーメン", Materials = materialsPasta };
-            Recipe recipe1 = new Recipe { ID = 2, Name = "うどん", Materials = materialRisotto };
-            Recipe recipe2 = new Recipe { ID = 3, Name = "そば", Materials = materialOnigiri };
+            Recipe recipe = new Recipe { ID = 1, Name = "ラーメン", Materials = materialsPasta, CanAcceptChildren=true };
+            Recipe recipe1 = new Recipe { ID = 2, Name = "うどん", Materials = materialRisotto, CanAcceptChildren = true };
+            Recipe recipe2 = new Recipe { ID = 3, Name = "そば", Materials = materialOnigiri, CanAcceptChildren = true };
 
             Recipes2.Add(recipe);
             Recipes2.Add(recipe1);

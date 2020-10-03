@@ -13,4 +13,8 @@
     <PackageReference Include="PropertyChanged.Fody" Version="3.2.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="GameLogics\" />
+  </ItemGroup>
+
 </Project>

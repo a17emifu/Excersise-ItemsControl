@@ -21,7 +21,7 @@ namespace Excersise_ItemsControl.ViewModels.DragDrop
         public void DragOver(IDropInfo dropInfo)
         {
             IRecipe sourceItem = dropInfo.Data as IRecipe;
-            IRecipe targetItem = dropInfo.Data as IRecipe;
+            IRecipe targetItem = dropInfo.TargetItem as IRecipe;
 
             if (sourceItem != null && targetItem != null && targetItem.CanAcceptChildren)
             {
@@ -34,7 +34,7 @@ namespace Excersise_ItemsControl.ViewModels.DragDrop
         {
             IRecipe sourceItem = dropInfo.Data as IRecipe;
             IRecipe targetItem = dropInfo.Data as IRecipe;
-            targetItem.Children.Add(sourceItem);
+            //targetItem.Children.Add(sourceItem);
         }
     }
 }

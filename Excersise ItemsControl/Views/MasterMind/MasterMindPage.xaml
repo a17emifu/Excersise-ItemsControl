@@ -16,5 +16,9 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <local:PegUC DataContext="{Binding PegUCVM}" Grid.Column="0"></local:PegUC>
+        <local:PegBoardUC DataContext="{Binding PegUCVM}" Grid.Column="1"></local:PegBoardUC>
+        <Button Grid.Column="0" Content="Check" Command="{Binding CheckPegsCommand}" Width="200" Height="100" VerticalAlignment="Bottom"></Button>
+        <Button Grid.Column="1" Content="Check" Command="{Binding CheckPegsOnBoardCommand}" Width="200" Height="100" VerticalAlignment="Bottom"></Button>
+
     </Grid>
 </Page>

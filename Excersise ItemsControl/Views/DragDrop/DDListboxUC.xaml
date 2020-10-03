@@ -11,7 +11,7 @@
         <ListBox Width="200" ItemsSource="{Binding Recipes}"
                  dd:DragDrop.IsDragSource="True"
                  dd:DragDrop.IsDropTarget="True"
-                 dd:DragDrop.DragHandler="{Binding}">
+                 dd:DragDrop.DropHandler="{Binding}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <ListBoxItem>

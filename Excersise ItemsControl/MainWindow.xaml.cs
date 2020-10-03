@@ -1,4 +1,5 @@
 ﻿using Excersise_ItemsControl.Views;
+using Excersise_ItemsControl.Views.MasterMind;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,8 @@ namespace Excersise_ItemsControl
             //Main.Content = new MainPage();
             //Main.Content = new ListPage();
             //Main.Content = new ListBoxPage();
-            Main.Content = new DDPage();
+            //Main.Content = new DDPage();
+            Main.Content = new MasterMindPage();
 
 
         }

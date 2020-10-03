@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Excersise_ItemsControl.ViewModels.MasterMind;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,6 +22,7 @@ namespace Excersise_ItemsControl.Views.MasterMind
         public MasterMindPage()
         {
             InitializeComponent();
+            DataContext = new MasterMindPageVM();
         }
     }
 }

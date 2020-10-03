@@ -21,6 +21,7 @@
                 <DataTemplate>
                     <Ellipse Width="40"
                              Height="40"
+                             Margin="2"
                              Fill="{Binding PegColor}"
                              ></Ellipse>
                 </DataTemplate>

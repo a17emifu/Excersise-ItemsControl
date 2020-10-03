@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:Excersise_ItemsControl.Views.MasterMind"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="MasterMindPage">
+      Title="MasterMindPage"
+      >
 
     <Grid>
         <Grid.ColumnDefinitions>

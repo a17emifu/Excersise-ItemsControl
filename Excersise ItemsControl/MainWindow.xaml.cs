@@ -1,5 +1,6 @@
 ﻿using Excersise_ItemsControl.Views;
 using Excersise_ItemsControl.Views.MasterMind;
+using Excersise_ItemsControl.Views.Menu;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,7 @@ namespace Excersise_ItemsControl
             //Main.Content = new ListBoxPage();
             //Main.Content = new DDPage();
             Main.Content = new MasterMindPage();
+            TopMenu.Content = new MenuUC();
 
 
         }

@@ -35,8 +35,7 @@ namespace Excersise_ItemsControl.ViewModels.MasterMind
             PegUCVM = new PegUCVM(Pegs, PegsOnBoard);
 
             MasterMindEngine = new MasterMindEngine(PegsOnBoard, PegsResult);
-           /* MasterMindEngine.TryPegs = PegsOnBoard;
-            PegsResult = MasterMindEngine.PegsResult;*/
+
 
             CheckPegsCommand = new RelayCommand(CheckPegs);
             CheckPegsOnBoardCommand = new RelayCommand(CheckPegsOnBoard);
@@ -47,15 +46,6 @@ namespace Excersise_ItemsControl.ViewModels.MasterMind
             ObservableCollection<PegVM> answerPegs = new ObservableCollection<PegVM>();
             answerPegs = MasterMindEngine.MakeAnswer();
             PegsResult = MasterMindEngine.CompareAnswer();
-
-            /*PegsResult = answerPegs;
-            PegsResult[0].GuessResult = PegPosition.TotalyWrong;   //RED
-            PegsResult[1].GuessResult = PegPosition.CorrectColorWrongPosition; //YELLOW
-            PegsResult[2].GuessResult = PegPosition.CorrectColorAndPosiiton;   //GREEN*/
-
-            /*MasterMindEngine.CompareAnswer();
-            PegsResult = MasterMindEngine.PegsResult;*/
-            //MakePegsOnBoard();
         }
 
         private void CheckPegs()

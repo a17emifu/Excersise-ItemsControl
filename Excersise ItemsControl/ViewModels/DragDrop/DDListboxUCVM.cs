@@ -23,7 +23,7 @@ namespace Excersise_ItemsControl.ViewModels.DragDrop
             IRecipe sourceItem = dropInfo.Data as IRecipe;
             IRecipe targetItem = dropInfo.TargetItem as IRecipe;
 
-            if (sourceItem != null && targetItem != null && targetItem.CanAcceptChildren)
+            if (sourceItem != null && targetItem != null)
             {
                 dropInfo.DropTargetAdorner = DropTargetAdorners.Highlight;
                 dropInfo.Effects = DragDropEffects.Copy;

@@ -1,4 +1,5 @@
-﻿using Excersise_ItemsControl.ViewModels.Base;
+﻿using Excersise_ItemsControl.GameLogics;
+using Excersise_ItemsControl.ViewModels.Base;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,6 +16,9 @@ namespace Excersise_ItemsControl.ViewModels.MasterMind
         //public PegUCVM PegBoardUC { get; set; }
         public ObservableCollection<PegVM> Pegs {get; set;}
         public ObservableCollection<PegVM> PegsOnBoard { get; set; }
+        public ObservableCollection<PegVM> PegsResult { get; set; }
+
+        public IMasterMindEngine MasterMindEngine { get; set; }
 
         public ICommand CheckPegsCommand { get; set; }
         public ICommand CheckPegsOnBoardCommand { get; set; }
@@ -24,10 +28,14 @@ namespace Excersise_ItemsControl.ViewModels.MasterMind
             Pegs = new ObservableCollection<PegVM>();
             PegsOnBoard = new ObservableCollection<PegVM>();
             
+            
             MakePegs();
             MakePegsOnBoard();
             PegUCVM = new PegUCVM(Pegs, PegsOnBoard);
-            //PegBoardUC = new PegUCVM(PegsOnBoard);
+
+            MasterMindEngine = new MasterMindEngine(PegsOnBoard);
+           /* MasterMindEngine.TryPegs = PegsOnBoard;
+            PegsResult = MasterMindEngine.PegsResult;*/
 
             CheckPegsCommand = new RelayCommand(CheckPegs);
             CheckPegsOnBoardCommand = new RelayCommand(CheckPegsOnBoard);
@@ -35,7 +43,9 @@ namespace Excersise_ItemsControl.ViewModels.MasterMind
 
         private void CheckPegsOnBoard()
         {
-            ObservableCollection<PegVM> pegs = PegsOnBoard;
+
+            MasterMindEngine.CompareAnswer();
+            PegsResult = MasterMindEngine.PegsResult;
         }
 
         private void CheckPegs()
@@ -55,9 +65,9 @@ namespace Excersise_ItemsControl.ViewModels.MasterMind
 
         private void MakePegs()
         {
-            PegVM pegYellow = new PegVM() { PegColor = Brushes.Yellow, CanAcceptChildren = true };
-            PegVM pegGreen = new PegVM() { PegColor = Brushes.Green, CanAcceptChildren = true };
-            PegVM pegRed = new PegVM() { PegColor = Brushes.Red,  CanAcceptChildren = true };
+            PegVM pegYellow = new PegVM() { PegColor = Brushes.Yellow, Name="Yellow" };
+            PegVM pegGreen = new PegVM() { PegColor = Brushes.Green,  Name = "Green" };
+            PegVM pegRed = new PegVM() { PegColor = Brushes.Red,  Name = "Red" };
 
             Pegs.Add(pegYellow);
             Pegs.Add(pegRed);

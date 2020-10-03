@@ -38,7 +38,7 @@ namespace Excersise_ItemsControl.ViewModels.MasterMind
             PegVM sourceItem = dropInfo.Data as PegVM;
             PegVM targetItem = dropInfo.Data as PegVM;
 
-            if (sourceItem != null && targetItem != null && targetItem.CanAcceptChildren)
+            if (sourceItem != null && targetItem != null)
             {
                 dropInfo.DropTargetAdorner = DropTargetAdorners.Highlight;
                 dropInfo.Effects = DragDropEffects.Copy;

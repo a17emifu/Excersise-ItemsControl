@@ -11,7 +11,6 @@ namespace Excersise_ItemsControl.ViewModels.MasterMind
     class PegVM : BaseViewModel, IPeg
     {
         public Brush PegColor { get; set; }
-        public bool CanAcceptChildren { get; set; }
-        public ObservableCollection<IPeg> Children { get; set; }
+        public string Name { get; set; }
     }
 }

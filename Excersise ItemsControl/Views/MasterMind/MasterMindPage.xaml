@@ -17,8 +17,30 @@
         </Grid.ColumnDefinitions>
         <local:PegUC DataContext="{Binding PegUCVM}" Grid.Column="0"></local:PegUC>
         <local:PegBoardUC DataContext="{Binding PegUCVM}" Grid.Column="1"></local:PegBoardUC>
+        
         <Button Grid.Column="0" Content="Check" Command="{Binding CheckPegsCommand}" Width="200" Height="100" VerticalAlignment="Bottom"></Button>
         <Button Grid.Column="1" Content="Check" Command="{Binding CheckPegsOnBoardCommand}" Width="200" Height="100" VerticalAlignment="Bottom"></Button>
+       
+        <ListView  Grid.Column="2" MinHeight="100" Background="White" Width="200" ItemsSource="{Binding PegsResult}" Height="100" VerticalAlignment="Top">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+
+                <DataTemplate>
+                    <ListViewItem>
+
+                        <Ellipse Width="40"
+                             Height="40"
+                             Margin="2"
+                             Fill="{Binding PegColor}"
+                             ></Ellipse>
+                    </ListViewItem>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
     </Grid>
 </Page>
